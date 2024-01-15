@@ -21,7 +21,7 @@ interface PakryptStoreNoticeSuccessWrite {
 const app = express()
 app.use(express.text())
 
-const port = 3000
+const port = 3123
 
 app.use((req, res, next) => {
   const key = req.headers['x-api-key']
@@ -87,6 +87,6 @@ app.use((err: Error, req: express.Request, res: express.Response, next: express.
   res.send(result)
 })
 
-app.listen(port, () => {
+app.listen(port, '127.0.0.1', () => {
   console.log(`Server is running at http://localhost:${port}`)
 })
